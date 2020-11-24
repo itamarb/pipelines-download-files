@@ -20,6 +20,7 @@ pipelines:
             - name: myArtifactory
         execution:
           onStart:
+            - cd workspace/jfrog
             - ls -la
             - retry_command jfrog rt config --url $int_myArtifactory_url --user $int_myArtifactory_user --apikey $int_myArtifactory_apikey --interactive=false
             - jfrog rt dl --spec specfile.json

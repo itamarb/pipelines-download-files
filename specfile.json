@@ -3,7 +3,7 @@
     {
       "aql": {
         "items.find": {
-          "repo": "docker-local-test"
+          "repo": "docker-local"
         }
       }
     }

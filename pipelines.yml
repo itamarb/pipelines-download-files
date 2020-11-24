@@ -21,4 +21,5 @@ pipelines:
         execution:
           onStart:
             - retry_command jfrog rt config --url $int_myArtifactory_url --user $int_myArtifactory_user --apikey $int_myArtifactory_apikey --interactive=false
-            - JFROG_CLI_LOG_LEVEL=DEBUG jfrog rt dl --spec dependencyState/resources/gitRepo/specfile.json
+            - export JFROG_CLI_LOG_LEVEL=DEBUG 
+            - jfrog rt dl --spec dependencyState/resources/gitRepo/specfile.json

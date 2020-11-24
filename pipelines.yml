@@ -4,6 +4,8 @@ resources:
     configuration:
       path: gitta-jfrog/pipelines-download-files
       gitProvider: github
+      branches:
+        include: main
     
 pipelines:
   - name: download_example

@@ -20,11 +20,8 @@ pipelines:
             - name: myArtifactory
         execution:
           onStart:
-            - sleep 5m
-            - ls workspace/
-            - ls -la
             - retry_command jfrog rt config --url $int_myArtifactory_url --user $int_myArtifactory_user --apikey $int_myArtifactory_apikey --interactive=false
-            - jfrog rt dl --spec specfile.json
+            - jfrog rt dl --spec dependencyState/resources/gitRepo/specfile.json
             - ls -la
             - cat $HOME/.jfrog/logs/jfrog-cli*
             

@@ -1,0 +1,23 @@
+resources:
+  - name: gitRepo
+    type: GitRepo
+    configuration:
+      path: gitta-jfrog/pipelines-download-files
+      gitProvider: github
+    
+pipelines:
+  - name: download_example
+    steps:
+      - name: download_files
+        type: Bash
+        configuration:
+          inputResources:
+            - name: gitRepo
+              trigger: false
+          integrations:
+            - name: myArtifactory
+        execution:
+          onStart:
+            - rm -rf $run_dir/workspace/jfrog
+            - retry_command jfrog rt config --url $int_myArtifactory_url --user $int_myArtifactory_user --apikey $int_myArtifactory_apikey --interactive=false
+            

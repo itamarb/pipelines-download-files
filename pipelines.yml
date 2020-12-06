@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       path: gitta-jfrog/pipelines-download-files
-      gitProvider: github
+      gitProvider: myGithub
       branches:
         include: main
     

@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       path: itamarb/pipelines-download-files
-      gitProvider: myGithub
+      gitProvider: GitHub
       branches:
         include: main
     

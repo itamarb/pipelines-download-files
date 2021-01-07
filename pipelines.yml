@@ -2,7 +2,7 @@ resources:
   - name: gitRepo
     type: GitRepo
     configuration:
-      path: gitta-jfrog/pipelines-download-files
+      path: itamarb/pipelines-download-files
       gitProvider: myGithub
       branches:
         include: main
